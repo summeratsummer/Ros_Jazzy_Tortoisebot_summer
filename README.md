@@ -37,7 +37,7 @@ This repository contains the URDF model and simulation files for TortoiseBot, a 
 
 Clone the package into your ROS 2 workspace:
 
-<pre> cd ~/ros2_ws/src
+<pre>cd ~/ros2_ws/src
 git clone https://github.com/yourusername/tortoisebot_description.git
 cd ~/ros2_ws
 colcon build
