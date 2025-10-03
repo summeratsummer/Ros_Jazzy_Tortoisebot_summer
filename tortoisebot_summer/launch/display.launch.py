@@ -2,6 +2,8 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
+    pkg_path = get_package_share_directory('tortoisebot_description')
+    urdf_file = os.path.join(pkg_path, 'urdf', 'tortoisebot.urdf')
     return LaunchDescription([
         Node(
             package="robot_state_publisher",
@@ -9,7 +11,7 @@ def generate_launch_description():
             name="robot_state_publisher",
             output="screen",
             parameters=[{"use_sim_time": True}],
-            arguments=["urdf/tortoisebot.urdf.xacro"],
+            arguments=["urdf/tortoisebot.urdf"],
         ),
         Node(
             package="rviz2",
@@ -18,3 +20,4 @@ def generate_launch_description():
             output="screen"
         )
     ])
+
